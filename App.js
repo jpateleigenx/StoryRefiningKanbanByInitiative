@@ -7,7 +7,7 @@ Ext.define('CustomApp', {
         //Test log with current date/time
         console.log('Test log to console: ', Date().toLocaleString());
         
-        //sets context to Radian
+        //sets context to Radian for testing
         //var project_oid = '/project/37192747640';
         
         this.add({
@@ -98,10 +98,7 @@ Ext.define('CustomApp', {
 			columnConfig: {
 				plugins: [
 					{
-					    //ptype: 'rallycolumncardcounter',
-					    //ptype: 'rallycardboardcollapsiblecolumns',
-					    ptype: 'rallycolumnpolicy'
-					    //ptype: 'rallygridboardactionsmenu'
+                        ptype: 'rallycolumncardcounter'
 					}
 				]
 			}
@@ -147,6 +144,7 @@ Ext.define('CustomApp', {
     
     _getFilter: function() {
 		var combo = this.down('rallycombobox');
+		//var userCombo = this.down('rallyusersearchcombobox');
 		
 		//filter on selected Initiative
 		var filters = Ext.create('Rally.data.QueryFilter', {
@@ -184,6 +182,14 @@ Ext.define('CustomApp', {
 			value: 'Refining'
 		});
 		
+		/*
+		//include only stories for selected owner
+		filters = filters.and({
+            property: "Owner",
+            operator: "=",
+            value: userCombo.getValue()
+		});
+		*/
 		
 		
 		//TEST: Filter string output
