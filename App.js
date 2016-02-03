@@ -4,6 +4,12 @@ Ext.define('CustomApp', {
     
     
     launch: function() {
+        /**
+         * @author Jayesh Patel
+         * @version 1.0
+         * @since 2016-02-03
+         */
+        
         //Test log with current date/time
         console.log('Test log to console: ', Date().toLocaleString());
         
