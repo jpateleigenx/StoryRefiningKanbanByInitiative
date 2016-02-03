@@ -4,7 +4,7 @@ Ext.define('CustomApp', {
     
     
     launch: function() {
-        /**
+        /*
          * @author Jayesh Patel
          * @version 1.0
          * @since 2016-02-03
