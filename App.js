@@ -7,6 +7,8 @@ Ext.define('CustomApp', {
         //Test log with current date/time
         console.log('Test log to console: ', Date().toLocaleString());
         
+        //sets context to Radian
+        var project_oid = '/project/37192747640';
         
         this.add({
 			xtype: 'rallycombobox',
@@ -31,14 +33,14 @@ Ext.define('CustomApp', {
 				remoteGroup: false,
 				remoteSort: false,
 				remoteFilter: false,
-				limit: Infinity
-				/*
+				limit: Infinity,
+				
 				context: {
 					project: project_oid,
 					projectScopeDown: true,
 					projectScopeUp: false
 				}
-				*/
+				
 			},
 			// stateful: false,
 			listeners: {
@@ -89,6 +91,17 @@ Ext.define('CustomApp', {
                     'Project'
                 ],
 				showIconsAndHighlightBorder: false
+			},
+			
+			columnConfig: {
+				plugins: [
+					{
+					    //ptype: 'rallycolumncardcounter',
+					    //ptype: 'rallycardboardcollapsiblecolumns',
+					    ptype: 'rallycolumnpolicy'
+					    //ptype: 'rallygridboardactionsmenu'
+					}
+				]
 			}
 			
 			//swimlanes if needed
